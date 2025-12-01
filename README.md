@@ -1,1 +1,1 @@
-# tauri-plugin-rtc
+# Tauri Plugin rtc
