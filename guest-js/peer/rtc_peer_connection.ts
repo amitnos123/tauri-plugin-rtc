@@ -1,7 +1,7 @@
-import TauriRTCSessionDescription from "./rtc_session_description";
-import TauriRTCIdentityAssertion from "./rtc_identity_assertion"
-import TauriRTCSctpTransport from "./rtc_sctp_transport";
-import TauriRTCCertificate from "./rtc_certificate";
+import TauriRTCSessionDescription from "../rtc_session_description";
+import TauriRTCIdentityAssertion from "../rtc_identity_assertion"
+import TauriRTCSctpTransport from "../rtc_sctp_transport";
+import TauriRTCCertificate from "../rtc_certificate";
 
 export default class TauriRTCPeerConnection {
     

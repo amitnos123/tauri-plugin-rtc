@@ -9,6 +9,6 @@
     "noImplicitAny": true,
     "noEmit": true
   },
-  "include": ["guest-js/*.ts"],
+  "include": ["guest-js/*.ts", "guest-js/data/rtc_data_channel_event.ts", "guest-js/data/rtc_data_channel_stats.ts", "guest-js/data/rtc_data_channel.ts", "guest-js/peer/rtc_peer_connection_ice_error_event.ts", "guest-js/peer/rtc_peer_connection_ice_event.ts", "guest-js/peer/rtc_peer_connection_stats.ts", "guest-js/peer/rtc_peer_connection.ts", "guest-js/ice/rtc_ice_candidate_pair_stats.ts", "guest-js/ice/rtc_ice_candidate_pair.ts", "guest-js/ice/rtc_ice_candidate_stats.ts", "guest-js/ice/rtc_ice_candidate.ts", "guest-js/ice/rtc_ice_parameters.ts", "guest-js/ice/rtc_ice_transport.ts", "guest-js/rtp/rtc_rtp_receiver.ts", "guest-js/rtp/rtc_rtp_script_transform.ts", "guest-js/rtp/rtc_rtp_script_transformer.ts", "guest-js/rtp/rtc_rtp_sender.ts", "guest-js/rtp/rtc_rtp_transceiver.ts", "guest-js/encode/rtc_encoded_audio_frame.ts", "guest-js/encode/rtc_encoded_video_frame.ts", "guest-js/dtmf/rtc_dtmf_sender.ts", "guest-js/dtmf/rtc_dtmf_tone_change_event.ts"],
   "exclude": ["dist-js", "node_modules"]
 }
