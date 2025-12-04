@@ -5,9 +5,12 @@
 -->
 ![License](https://img.shields.io/badge/License-MIT%20or%20Apache%202-green.svg)
 
-<!--- -->
+tauri-plugin-rtc
 
-**Sample Usage:**
+A lightweight, native WebRTC plugin for Tauri that brings RTCPeerConnection, RTCDataChannel, and related WebRTC APIs to desktop applications.
+Designed as a drop-in bridge between Tauri and Rust’s webrtc-rs stack, providing an easy, familiar API for real-time communication (audio, video, and data) in your Tauri apps.
+
+This plugin is built on top of [webrtc-rs crate](https://github.com/webrtc-rs/webrtc) — a full, native Rust implementation of the WebRTC stack based on Google's C++ WebRTC project.
 
 <!---
 * Realtime activity feeds or notifications
