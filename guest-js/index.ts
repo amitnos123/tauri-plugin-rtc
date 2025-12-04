@@ -17,4 +17,4 @@ export * as Transform from './rtc_transform_event';
 
 // Method
 // -------
-// getUserMedia()
+// getUserMedia() 
