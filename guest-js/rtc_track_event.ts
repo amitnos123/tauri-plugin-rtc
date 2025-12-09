@@ -1,6 +1,13 @@
 import TauriRTCRTPReceiver from "./rtp/rtc_rtp_receiver";
 import TauriRTCRTPTransceiver from "./rtp/rtc_rtp_transceiver";
 
+interface TauriRTCDataChannelEventInit extends EventInit {
+    receiver: TauriRTCRTPReceiver;
+    stream?: MediaStream[];
+    track: MediaStreamTrack;
+    transceiver: TauriRTCRTPTransceiver;
+}
+
 export default class TauriRTCTrackEvent extends Event {
     private _receiver!: TauriRTCRTPReceiver;
     private _stream?: MediaStream[];
@@ -23,4 +30,12 @@ export default class TauriRTCTrackEvent extends Event {
         return this._transceiver;
     }
     
+    constructor(type: string, eventInitDict: TauriRTCDataChannelEventInit) {
+        super(type, eventInitDict);
+
+        this._receiver = eventInitDict.receiver;
+        this._stream = eventInitDict.stream;
+        this._track = eventInitDict.track;
+        this._transceiver = eventInitDict.transceiver;
+    }
 }
