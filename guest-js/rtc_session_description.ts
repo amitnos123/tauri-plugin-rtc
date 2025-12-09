@@ -9,11 +9,14 @@ export default class TauriRTCSessionDescription {
         return this._sdp;
     }
 
-    constructor() {
-
-    }
-
-    public toJSON() {
-
+    /**
+     * Returns a plain object suitable for JSON serialization.
+     * This is automatically used by JSON.stringify().
+     */
+    public toJSON(): { type: string; sdp: string } {
+        return {
+            type: this._type,
+            sdp: this._sdp,
+        };
     }
 }
