@@ -6,5 +6,4 @@ export default class TauriRTCTransformEvent extends Event {
     get transformer() : TauriRTCRTPScriptTransformer {
         return this._transformer;
     }
-    
 }
