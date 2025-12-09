@@ -1,10 +1,17 @@
-export default class TauriRTCPeerConnectionIceEvent {
-    private _candidate: RTCIceCandidate | null = null; // RTCCandidate
-    get candidate(): RTCIceCandidate | null {
+export interface TauriRTCPeerConnectionIceEventInit extends EventInit {
+    candidate: RTCIceCandidate;
+}
+
+export default class TauriRTCPeerConnectionIceEvent extends Event {
+    private _candidate!: RTCIceCandidate; // RTCCandidate
+
+    get candidate(): RTCIceCandidate {
         return this._candidate;
     }
 
-    constructor() {
+    constructor(type: string, eventInitDict: TauriRTCPeerConnectionIceEventInit) {
+        super(type, eventInitDict);
 
+        this._candidate = eventInitDict.candidate;
     }
 }
