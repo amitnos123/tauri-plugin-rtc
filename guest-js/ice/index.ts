@@ -4,3 +4,5 @@ export * from './rtc_ice_candidate_stats';
 export * from './rtc_ice_candidate';
 export * from './rtc_ice_parameters';
 export * from './rtc_ice_transport';
+
+export type RTCICEState = "new" | "checking" | "connected" | "completed" | "disconnected" | "failed" | "closed";
