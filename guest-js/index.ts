@@ -15,6 +15,23 @@ export * as StatsReport from './rtc_stats_report';
 export * as TrackEvent from './rtc_track_event';
 export * as Transform from './rtc_transform_event';
 
+
+
+export type UnlistenFn = () => void;
+export type TypedArray =
+  | Int8Array
+  | Uint8Array
+  | Uint8ClampedArray
+  | Int16Array
+  | Uint16Array
+  | Int32Array
+  | Uint32Array
+  | Float32Array
+  | Float64Array
+  | BigInt64Array
+  | BigUint64Array;
+
+
 // Method
 // -------
 // getUserMedia() 
