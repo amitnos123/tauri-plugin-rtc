@@ -15,10 +15,7 @@ export default class TauriRTCDtlsTransport extends EventTarget {
         return this._state;
     }
 
-    //===============================
-    //     INTERNAL STATE MGMT
-    //===============================
-    _setState(newState: DTLSTransportState) {
+    private _setState(newState: DTLSTransportState) {
         if (this._state === newState) return;
         this._state = newState;
 
@@ -31,7 +28,7 @@ export default class TauriRTCDtlsTransport extends EventTarget {
         this.dispatchEvent(ev);
     }
 
-    _emitError(errorMessage: string) {
+    private _emitError(errorMessage: string) {
         const errorObject = new TauriRTCError(
             { errorDetail: "dtls-failure" },
             errorMessage
