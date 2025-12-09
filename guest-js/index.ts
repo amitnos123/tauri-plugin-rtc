@@ -18,6 +18,7 @@ export * as Error from './rtc_error';
 
 
 export type DTLSTransportState = "new" | "connecting" | "connected" | "closed" | "failed";
+export type SctpTransportState = "connecting" | "connected" | "closed";
 export type UnlistenFn = () => void;
 export type TypedArray =
   | Int8Array
