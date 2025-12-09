@@ -1,7 +1,7 @@
 /**
  * Interface describing initialization data for a TauriRTCError.
  */
-export interface TauriRTCErrorInit {
+export interface TauriRTCErrorInit extends EventInit {
   /**
    * A string describing the type of WebRTC error.
    * Example: "data-channel-failure", "sdp-syntax-error", "dtls-failure".
