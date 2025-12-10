@@ -1,9 +1,10 @@
+import { TauriRtcRtpCapabilities } from ".";
 import TauriRTCDtlsTransport from "../rtc_dtls_transport";
 import TauriRTCRTPScriptTransform from "./rtc_rtp_script_transform";
 
 export default class TauriRTCRTPReceiver {
-    private _track: MediaStreamTrack;
-    private _transport: TauriRTCDtlsTransport;
+    private _track!: MediaStreamTrack;
+    private _transport!: TauriRTCDtlsTransport;
 
     get track(): MediaStreamTrack {
         return this._track;
@@ -12,10 +13,10 @@ export default class TauriRTCRTPReceiver {
         return this._transport;
     }
 
-    public jitterBufferTarget: DOMHighResTimeStamp;
-    public transform: TauriRTCRTPScriptTransform;
+    public jitterBufferTarget!: DOMHighResTimeStamp;
+    public transform!: TauriRTCRTPScriptTransform;
 
-    public static getCapabilities() {
+    public static getCapabilities(kind: "audio" | "video"): TauriRtcRtpCapabilities {
 
     }
     
