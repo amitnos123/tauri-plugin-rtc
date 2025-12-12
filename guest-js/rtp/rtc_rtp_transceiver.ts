@@ -11,8 +11,8 @@ export default class TauriRTCRTPTransceiver {
     private _sender!:  TauriRTCRTPSender;
     private _pc!: TauriRTCPeerConnection; // Owner
     private _kind!: "audio" | "video"; // Kind of media, audio or video
-    private _defaultPreferredCodecs: RTCRtpCodec[] = [];
-    private _preferredCodecs!: RTCRtpCodec[];
+    private _defaultPreferredCodecs: TauriRtcRtpCodec[] = [];
+    private _preferredCodecs!: TauriRtcRtpCodec[];
 
     get currentDirection(): string | null {
         return this._currentDirection;
