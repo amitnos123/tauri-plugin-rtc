@@ -12,6 +12,8 @@ Designed as a drop-in bridge between Tauri and Rust’s webrtc-rs stack, providi
 
 This plugin is built on top of [webrtc-rs crate](https://github.com/webrtc-rs/webrtc) — a full, native Rust implementation of the WebRTC stack based on Google's C++ WebRTC project.
 
+https://w3c.github.io/webrtc-pc/
+
 <!---
 * Realtime activity feeds or notifications
 * Live server logs
@@ -123,6 +125,44 @@ event_source.remove_event_listener("myEvent");
 event_source.close();
 ```
 --->
+
+## 📐 WebRTC Specification & Documentation References
+
+This project aims to closely follow the official **W3C WebRTC specification** to ensure correctness, predictability, and compatibility with standard WebRTC behavior.
+
+### Primary Specification (Source of Truth)
+
+The API surface, state transitions, and semantics are based on the W3C WebRTC 1.0 specification:
+
+- **W3C WebRTC PeerConnection API**  
+  https://w3c.github.io/webrtc-pc/
+
+The W3C specification is treated as the **normative reference**, especially for:
+- API shape and naming
+- Read-only vs mutable properties
+- Nullability and lifecycle behavior
+- State machines and invariants
+
+### Developer Documentation & Examples
+
+For explanatory material, usage examples, and practical guidance, this project also references:
+
+- **MDN Web Docs – WebRTC API**  
+  https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API
+
+MDN is used as a **secondary, non-normative resource**, primarily for:
+- Human-readable explanations
+- Common usage patterns
+- Browser behavior notes
+
+### Design Philosophy
+
+The goal of this project is to provide a WebRTC-compatible API surface that:
+- Matches W3C WebIDL semantics where applicable
+- Feels familiar to developers with browser WebRTC experience
+- Balances specification fidelity with practical TypeScript ergonomics
+
+Where deviations from the specification exist, they are intentional and documented.
  
 ## Licenses
 
