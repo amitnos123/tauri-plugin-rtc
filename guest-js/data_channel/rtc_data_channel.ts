@@ -204,37 +204,37 @@ export default class TauriRTCDataChannel extends EventTarget {
      * Called when the data channel has been opened and is ready to send data.
      * @type {(ev: RTCDataChannelEvent) => void}
      */
-    onopen: ((ev: RTCDataChannelEvent) => void) = (ev: RTCDataChannelEvent) => {};
+    onopen: ((ev: RTCDataChannelEvent) => void) | null = null;
 
     /**
      * Called when the data channel has fully closed.
      * @type {(ev: Event) => void}
      */
-    onclose: ((ev: Event) => void) = (ev: Event) => {};
+    onclose: ((ev: Event) => void) | null = null;
 
     /**
      * Called when the data channel is in the process of closing.
      * @type {(ev: Event) => void}
      */
-    onclosing: ((ev: Event) => void) = (ev: Event) => {};
+    onclosing: ((ev: Event) => void) | null = null;
 
     /**
      * Called when an error occurs on the data channel.
      * @type {(ev: TauriRTCErrorEvent) => void}
      */
-    onerror: ((ev: TauriRTCErrorEvent) => void) = (ev: TauriRTCErrorEvent) => {};
+    onerror: ((ev: TauriRTCErrorEvent) => void) | null = null;
 
     /**
      * Called when a message is received from the remote peer.
      * The `data` property of the event contains the received message.
      * @type {(ev: MessageEvent) => void}
      */
-    onmessage: ((ev: MessageEvent) => void) = (ev: MessageEvent) => {};
+    onmessage: ((ev: MessageEvent) => void) | null = null;
 
     /**
      * Called when the buffered amount of outgoing data drops below the threshold.
      * @type {(ev: Event) => void}
      */
-    onbufferedamountlow: ((ev: Event) => void) = (ev: Event) => {};
+    onbufferedamountlow: ((ev: Event) => void) | null = null;
 
 }
