@@ -6,3 +6,9 @@ export * from './rtc_ice_parameters';
 export * from './rtc_ice_transport';
 
 export type RTCICEState = "new" | "checking" | "connected" | "completed" | "disconnected" | "failed" | "closed";
+
+export interface TauriRTCIceServer {
+    urls: string | string[];
+    username?: string;
+    credential?: string;
+}
