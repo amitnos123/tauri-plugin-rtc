@@ -90,18 +90,30 @@ export default class TauriRTCPeerConnection extends EventTarget {
     
     private configuration: TauriRTCConfiguration = {};
 
-    static async generateCertificate(): Promise<TauriRTCCertificate> {
+    static async generateCertificate(keygenAlgorithm: AlgorithmIdentifier): Promise<TauriRTCCertificate> {
         
     }
 
     constructor(configuration: TauriRTCConfiguration = {}) {
         super();
         try {
+            // Rust Side
             // 3. Let connection have a [[DocumentOrigin]] internal slot, initialized to the relevant settings object's origin.
 
             // 5. If the certificates value in configuration is non-empty, run the following steps for each certificate in certificates:
             if (configuration.certificates !== undefined) {
                 // TODO
+                for (let index = 0; index < configuration.certificates.length; index++) {
+                    const cert = configuration.certificates[index];
+
+                    // If the value of certificate.expires is less than the current time, throw an InvalidAccessError.
+                    if (cert.expires < Date.now())
+                        throw new DOMException("Certificate has expired", "InvalidAccessError");
+
+                    // If certificate.[[Origin]] is not same origin with connection.[[DocumentOrigin]], throw an InvalidAccessError.
+
+                    // Store certificate.
+                }
             } else {
                 // Else, generate one or more new RTCCertificate instances with this RTCPeerConnection instance and store them.
                 // This MAY happen asynchronously and the value of certificates remains undefined for the subsequent steps.
@@ -109,11 +121,12 @@ export default class TauriRTCPeerConnection extends EventTarget {
                 // so that the expiration check is to ensure that keys are not used indefinitely and additional certificate checks are unnecessary.
             }
 
+            // Rust Side
             // 7. Initialize connection's ICE Agent.
 
             this.configuration = configuration;
             
-
+            // Rust Side
             // 9. Let connection have an [[IsClosed]] internal slot, initialized to false.
             // 10. Let connection have a [[NegotiationNeeded]] internal slot, initialized to false.
             // 11. Let connection have an [[SctpTransport]] internal slot, initialized to null.
@@ -132,6 +145,7 @@ export default class TauriRTCPeerConnection extends EventTarget {
             // 24. Let connection have a [[PendingRemoteDescription]] internal slot, initialized to null.
             // 25. Let connection have a [[CurrentRemoteDescription]] internal slot, initialized to null.
             // 26. Let connection have a [[LocalIceCredentialsToReplace]] internal slot, initialized to an empty set.
+
             // 27. Return connection.
 
         } catch (error: unknown) {
