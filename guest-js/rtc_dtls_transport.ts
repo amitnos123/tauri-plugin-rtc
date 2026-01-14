@@ -3,9 +3,15 @@ import TauriRTCIceTransport from "./ice/rtc_ice_transport";
 import TauriRTCError from "./rtc_error";
 import TauriRTCErrorEvent from "./rtc_error_event";
 
+export interface TauriRTCDtlsFingerprint {
+  algorithm: string;
+  value: string;
+};
+
 export default class TauriRTCDtlsTransport extends EventTarget {
     private _iceTransport!: TauriRTCIceTransport;
     private _state: DTLSTransportState = "new";
+    private remoteCertificates: ArrayBuffer[] = []; // Set via backend
 
     get iceTransport(): TauriRTCIceTransport {
         return this._iceTransport;
@@ -44,7 +50,7 @@ export default class TauriRTCDtlsTransport extends EventTarget {
     // Methods
     //---------
     public getRemoteCertificates(): ArrayBuffer[] {
-        //TODO: invoke from backend
+        return this.remoteCertificates;
     }
 
     /**
