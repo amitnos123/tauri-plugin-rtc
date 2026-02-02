@@ -26,3 +26,16 @@ export interface TauriRtcRtpCapabilities {
 export interface TauriRtcRtpHeaderExtensionCapability {
     uri: string;
 }
+
+
+
+export interface TauriRTCRtpSendParameters {
+  transactionId?: string;
+  codecs: RTCRtpCodecParameters[];
+  headerExtensions: RTCRtpHeaderExtensionParameters[];
+  encodings: RTCRtpEncodingParameters[];
+  rtcp: {
+    cname?: string;
+    reducedSize?: boolean;
+  };
+}
