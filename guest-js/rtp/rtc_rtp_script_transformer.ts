@@ -5,6 +5,10 @@ export default class TauriRTCRTPScriptTransformer {
 
     // Methods
     // -------
-    // generateKeyFrame()
-    // sendKeyFrameRequest()
+    public async generateKeyFrame(rid?: string) {
+        // Limited availability
+    }
+    public async  sendKeyFrameRequest() {
+        // backend
+    }
 }
